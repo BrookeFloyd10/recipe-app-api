@@ -1,5 +1,5 @@
 """
-Tests for models
+Tests for models.
 """
 from django.test import TestCase
 from django.contrib.auth import get_user_model
@@ -33,7 +33,7 @@ class ModelTests(TestCase):
             self.assertEqual(user.email, expected)
 
     def test_new_user_invalid_email(self):
-        """Test creating user with no email raises error."""
+        """Test that creating a user without an email raises a ValueError."""
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user('', 'test123')
 
