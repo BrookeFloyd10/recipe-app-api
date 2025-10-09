@@ -1,4 +1,4 @@
-""" 
+"""
 Serializers for the user API view
 """
 from django.contrib.auth import get_user_model
@@ -17,3 +17,4 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """Create and return a new user with encrypted password"""
         return get_user_model().objects.create_user(**validated_data)
+    
